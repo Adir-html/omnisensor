@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <title>Temperature and Battery Life Data</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 10px auto;
+            width: 90%;
+        }
+
+
+@media(min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+ 
+       .info-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 300px; /* Fixed width */
+            flex-shrink: 0; /* Prevent shrinking */
+            font-family: Arial, sans-serif;
+        }
+@media(min-width: 768px) {
+    .info-box {
+        margin-right: 20px;
+        margin-bottom: 0;
+        width: 300px;
+    }
+}
+
+       .info-box h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    font-size: 1em;
+}
+
+td {
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+           .chart-container {
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1920px;
+            min-width: 768px;
+
+        }
+
+@media(min-width: 768px) {
+    .chart-container {
+        order: 1; /* On larger screens, keep the chart to the right */
+    }
+}
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-box">
+            <h3>Current temperatures</h3>
+	    <table id="temperatureTable">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody id="recentTemperatures"></tbody>
+            </table>
+
+            <h3>Current battery (V)</h3>
+            <table id="batteryTable">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody id="recentBatteryLife"></tbody>
+        </table>
+    </div>
+    <div class="chart-container">
+       <canvas id="temperatureChart"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
