@@ -34,7 +34,7 @@ function updateRecentData(dates, temperatures, batteryLife) {
     // Update the recent temperatures table
     temperatures.forEach(temp => {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${temp.label}</td><td>${temp.data[lastIndex]}Â°C</td>`;
+        row.innerHTML = `<td>${temp.label}</td><td>${temp.data[lastIndex]}°C</td>`;
         recentTemperaturesList.appendChild(row);
     });
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     y: {
                         title: {
                             display: true,
-                            text: 'Temperature (Â°C)'
+                            text: 'Temperature (°C)'
                         }
                     }
                 }
